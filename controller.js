@@ -5,6 +5,7 @@ app.controller("MainController", function($scope){
 	$scope.message = " ";
 	$scope.inputcolor = "black";
 	$scope.ismessage = "no";
+	$scope.ischat = "no";
 	$scope.backimage={
 		background: 'url(http://i.ytimg.com/vi/-UNvdTeMrk4/maxresdefault.jpg)'
 	};
@@ -52,6 +53,7 @@ app.controller("MainController", function($scope){
 			$scope.mylist = ['PrekshaK'];
 		}
 		else if($scope.todo == "chat"){
+			$scope.ischat = "yes";
 			$scope.mylist = ['Hey, how are you?   Thanks for checking my website. I have to go now. I have my class. TTYL'];
 		}
 
@@ -60,6 +62,10 @@ app.controller("MainController", function($scope){
 					$scope.message = $scope.todo;
 					$scope.ismessage = "no";
 					$scope.mylist = ["Message recorded"];
+
+			}else if ($scope.ischat == "yes"){
+				$scope.ischat == "no";
+				$scope.mylist = ["will get back to you soon"];
 			}else{
 			$scope.mylist= ["Please enter 'help' to avoid confusion"];
 		    }
