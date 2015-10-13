@@ -1,0 +1,30 @@
+
+.container{
+	color: #33FFFF;
+	
+	background-image: url("http://gdurl.com/xE1z");
+	width: 666px%;
+	font-family: Courier;
+	margin-top: 180px;
+
+}
+.inputtext{
+	background-color: black;
+	color: #33FFFF;
+}
+
+
+
+body {
+	background-color: black;
+}
+
+.next{
+	color: yellow;
+	margin-top: 100px;
+	margin-left: 600px;
+}
+.text{
+	font-size: 17px;
+}
+
