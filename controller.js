@@ -77,6 +77,6 @@ app.controller("MainController", function($scope){
 
 
 app.controller("nextController", function($scope){
-	$scope.PK = "copyright@prekshakoirala";
+	$scope.PK = "Preksha © 1995";
 })
 
