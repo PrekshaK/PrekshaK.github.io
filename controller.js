@@ -1,7 +1,7 @@
 app.controller("MainController", function($scope){
 	$scope.mylist = [];
-	$scope.help = "";
-	$scope.todo = "Enter 'help'";
+	$scope.help = "Enter 'help'";
+	$scope.todo = "";
 	$scope.message = " ";
 	$scope.inputcolor = "black";
 	$scope.ismessage = "no";
@@ -25,7 +25,7 @@ app.controller("MainController", function($scope){
 
 	$scope.show = function(){
 		if ($scope.todo == "help"){
-			$scope.showcommands($scope.todo);k
+			$scope.showcommands($scope.todo);
 
 		}
 		else if ($scope.todo == "links"){
