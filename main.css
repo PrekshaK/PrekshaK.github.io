@@ -1,6 +1,6 @@
 
 .container{
-	color: white;
+	color: floralwhite;
 	
 	background-image: url("http://gdurl.com/xE1z");
 	width: 666px%;
@@ -27,4 +27,9 @@ body {
 .text{
 	font-size: 17px;
 }
-
+.ok{
+	color:white;
+	margin-left: 350px;
+	margin-top: 50px;
+	font-family: Courier;
+}
