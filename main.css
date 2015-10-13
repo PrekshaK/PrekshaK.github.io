@@ -1,6 +1,6 @@
 
 .container{
-	color: #33FFFF;
+	color: white;
 	
 	background-image: url("http://gdurl.com/xE1z");
 	width: 666px%;
@@ -10,17 +10,17 @@
 }
 .inputtext{
 	background-color: black;
-	color: #33FFFF;
+	color: floralwhite;
 }
 
-
+ 
 
 body {
 	background-color: black;
 }
 
 .next{
-	color: yellow;
+	color: white;
 	margin-top: 100px;
 	margin-left: 600px;
 }
