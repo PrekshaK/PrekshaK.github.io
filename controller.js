@@ -20,7 +20,8 @@ app.controller("MainController", function($scope){
 							 'Enter "song" to avoid boredom',
 							 'Enter "show" to see the full image',
 							 'Enter "emails" to list my emails',
-							 'Enter "chat" to chat with me'];
+							 'Enter "chat" to chat with me',
+							 'Enter "inspiration" to know a secret'];
 		}
 
 	$scope.show = function(){
@@ -51,6 +52,12 @@ app.controller("MainController", function($scope){
 		else if($scope.todo == "signature"){
 			$scope.mylist = ['PrekshaK'];
 		}
+		else if($scope.todo == "haha" || $scope.todo == "lol"){
+			$scope.mylist = ['I am laughing too ;)'];
+		}
+		else if($scope.todo == "inspiration"){
+			$scope.mylist = ["checkout http://www.lindsaylevine.com/", "I got inspired from her"];
+		}
 		else if($scope.todo == "chat"){
 			$scope.ischat = "yes";
 			$scope.mylist = ['Hey, how are you?',   'Thanks for checking my website.',  ' I have to go now. I have my class. TTYL'];
@@ -76,6 +83,6 @@ app.controller("MainController", function($scope){
 
 
 app.controller("nextController", function($scope){
-	$scope.PK = "Preksha © 1995";
+	
 })
 
