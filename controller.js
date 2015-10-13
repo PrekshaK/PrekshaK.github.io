@@ -1,4 +1,4 @@
-app.controller("MainController", function($scope){
+app.controller("MainController", function($scope, $rootScope){
 	$scope.mylist = [];
 	$scope.todo = "";
 	$scope.message = " ";
@@ -9,15 +9,16 @@ app.controller("MainController", function($scope){
 		background: 'url(http://i.ytimg.com/vi/-UNvdTeMrk4/maxresdefault.jpg)'
 	};
 
+	$scope.broadcast = function(){
+		alert('broadcast');
+		$rootScope.$broadcast('someEvent', $scope.todo)
+	}
 	
 
 
 	$scope.showcommands = function(){
 			$scope.mylist = ['Enter "links" for my links',
 							 'Enter "message" to text me',
-							 'Enter "resume" to view my resume',
-							 'Enter "play" to play the game I made', 
-							 'Enter "song" to avoid boredom',
 							 'Enter "show" to see the full image',
 							 'Enter "emails" to list my emails',
 							 'Enter "chat" to chat with me',
@@ -68,6 +69,7 @@ app.controller("MainController", function($scope){
 					$scope.message = $scope.todo;
 					$scope.ismessage = "no";
 					$scope.mylist = ["message recorded"];
+					$scope.broadcast();
 
 			}else if ($scope.ischat == "yes"){
 				$scope.ischat = "no";
