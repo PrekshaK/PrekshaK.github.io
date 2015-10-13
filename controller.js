@@ -64,7 +64,7 @@ app.controller("MainController", function($scope){
 					$scope.mylist = ["Message recorded"];
 
 			}else if ($scope.ischat == "yes"){
-				$scope.ischat == "no";
+				$scope.ischat = "no";
 				$scope.mylist = ["will get back to you soon"];
 			}else{
 			$scope.mylist= ["Please enter 'help' to avoid confusion"];
