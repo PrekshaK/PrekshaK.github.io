@@ -30,7 +30,7 @@ app.controller("MainController", ['$scope', function($scope, $firebaseObject, $h
 	$scope.showcommands = function(){
 			$scope.mylist = ['Enter "links" for my links',
 							 'Enter "message" to text me (only if absolutely necessay)',
-							 'Enter "pic" to see me',
+							 'Enter "pic" to view my picture',
 							 'Enter "resume" to view my resume',
 							 'Enter "emails" to list my emails',
 							 'Enter "chat" to chat with me',
