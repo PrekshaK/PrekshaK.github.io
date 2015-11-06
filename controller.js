@@ -6,6 +6,8 @@ app.controller("MainController", ['$scope', function($scope, $http){
 	$scope.ismessage = "no";
 	$scope.ischat = "no";
 	$scope.image="";
+	$scope.links=[];
+
 
    
 	// var slides = $scope.slides = [];
@@ -88,14 +90,19 @@ app.controller("MainController", ['$scope', function($scope, $http){
 	  if($scope.todo != "r"){
 	  	$scope.image="cat.jpeg";
 	  	}
+
+	  if($scope.todo != "links"){
+	  	$scope.links=[];
+	  }
 		if ($scope.todo == "help"){
 			$scope.showcommands($scope.todo);
 
 		}
 		else if ($scope.todo == "links"){
-			$scope.mylist=['www.facebook.com/preksha.koirala.7',
-							'www.github.com/PrekshaK',
-							 'www.linkedin.com/in/prekshakoirala']
+			$scope.links=['https://www.facebook.com/preksha.koirala.7',
+							'https://www.github.com/PrekshaK',
+							 'https://www.linkedin.com/in/prekshakoirala']
+			$scope.mylist=[];
 
 		}
 		else if ($scope.todo == "message"){

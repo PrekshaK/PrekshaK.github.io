@@ -25,6 +25,10 @@
         
 
         <h2>{{todo}}</h2>
+        <div ng-repeat="link in links">
+
+        <a ng-href="{{link}}">"{{link}}"</a>
+        </div>
        
         <div ng-repeat="item in mylist track by $index">
           <p class = "text" >{{item}}</p>
