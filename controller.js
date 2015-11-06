@@ -1,4 +1,4 @@
-app.controller("MainController", ['$scope', function($scope, $http){
+app.controller("MainController", ['$scope', function($scope, $firebaseObject, $http){
 	$scope.mylist = [];
 	$scope.todo = "";
 	$scope.message = " ";
@@ -7,72 +7,25 @@ app.controller("MainController", ['$scope', function($scope, $http){
 	$scope.ischat = "no";
 	$scope.image="";
 	$scope.links=[];
-
-
-   
-	// var slides = $scope.slides = [];
-	// $scope.addSlide = function(){
-	// 	var newWidth = 600 + slides.length + 1;
-	// 	slides.push({
- //          image: '//placekitten.com/' + newWidth + '/300',
- //          text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' +
- //            ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
- //        });
-	// };
-
-	// for (var i = 0; i < 4; i++){
-	// 	$scope.addSlide();
-	// }
+	$scope.Recipient={'name': 'Preksha',
+						'phone': '+5622936397',
+						'text': 'Preksha'};
 
 
 
+	$scope.sendSMSText = function (recipient) {
+	var smsQueue = new Firebase('https://personalblog.firebaseio.com/sms/' + recipient.phone);
+    var personalizedText =recipient.text;
+    console.log("Sending message");
 
-
-
-	 // $scope.sendRequest = {
-  //       // user: "prekshakoirala",      // Replace with your user
-  //       // pass: "FG87GT55!",               // Replace with your password
-  //       // source: "123456790",          // Replace with your sender ID
-  //       destination: "5622936397",     // Replace with the recipient number
-  //       sms: "Test Message 1"            // Replace with your message
-  //   };     
-
-  //    $scope.sendMessage = function() {
-        
-  //       $http.get("http://api.123-txt.com/Api123WCF.svc/rest/SendSms", {params: $scope.sendRequest}).success(function(res) {
-  //           if(res) {
-  //               $scope.sendStatus = "Success";
-  //           }
-  //           else{
-  //               $scope.sendStatus = "Error";
-  //               console.log("failed to send message");
-  //           }
-            
-  //       }).error(function(res){
-  //           $scope.sendStatus = "Error";
-  //       });
-  //   }            
-
-
-
-
-
-
-
-    $scope.sendMessage = function(){
-    var req = {
-        // user: "prekshakoirala@gmail.com",      // Replace with your user
-        // pass: "014032501",               // Replace with your password
-        // source: "447797875633",          // Replace with your sender ID
-        destination: "5622936397",     // Replace with the recipient number
-        sms: "Test Message 1",           // Replace with your message
-    };
-        
-    $http.get("http://api.123-txt.com/Api123WCF.svc/rest/SendSms", {params: req});    
-    };               
-      
-             
-
+ 
+	smsQueue.set({
+	name: recipient.name,
+	phone: recipient.phone,
+    text: personalizedText
+		})
+	};
+  
 
 	$scope.showcommands = function(){
 			$scope.mylist = ['Enter "links" for my links',
@@ -102,13 +55,16 @@ app.controller("MainController", ['$scope', function($scope, $http){
 			$scope.links=['https://www.facebook.com/preksha.koirala.7',
 							'https://www.github.com/PrekshaK',
 							 'https://www.linkedin.com/in/prekshakoirala']
-			$scope.mylist=[];
+			$scope.mylist=['Sorry my Facebook is deactivated. I will be back though :)'];
 
 		}
 		else if ($scope.todo == "message"){
 			$scope.ismessage = "yes";
 			$scope.mylist=["Type your MESSAGE in here"];
 
+		}
+		else if ($scope.todo == "cat"){
+			$scope.mylist=['It is cute. Right?'];
 		}
 		else if ($scope.todo == "song"){
 
@@ -151,9 +107,10 @@ app.controller("MainController", ['$scope', function($scope, $http){
 		else{
 			if($scope.ismessage == "yes"){
 					$scope.message = $scope.todo;
+					$scope.Recipient.text = $scope.todo;
 					$scope.ismessage = "no";
 					$scope.mylist = ["message recorded"];
-					$scope.sendMessage();
+					$scope.sendSMSText($scope.Recipient);
 				
 
 			}else if ($scope.ischat == "yes"){
