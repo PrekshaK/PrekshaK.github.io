@@ -14,6 +14,7 @@ app.controller("MainController", ['$scope', function($scope, $firebaseObject, $h
 
 
 	$scope.sendSMSText = function (recipient) {
+		console.log("sending message");
 	var smsQueue = new Firebase('https://personalblog.firebaseio.com/sms/' + recipient.phone);
     var personalizedText =recipient.text;
     console.log("Sending message");
@@ -113,7 +114,7 @@ app.controller("MainController", ['$scope', function($scope, $firebaseObject, $h
 		}
 
 		else{
-			if($scope.ismessage == "yes" && $scope.mylist==["Type your MESSAGE in here"]){
+			if(($scope.mylist[0]=="Type your MESSAGE in here") && ($scope.ismessage="yes")){
 					$scope.Recipient.text = $scope.todo;
 					$scope.ismessage = "no";
 					$scope.mylist = ["message sent to Preksha"];
