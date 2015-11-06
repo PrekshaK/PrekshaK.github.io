@@ -29,9 +29,8 @@ app.controller("MainController", ['$scope', function($scope, $firebaseObject, $h
 
 	$scope.showcommands = function(){
 			$scope.mylist = ['Enter "links" for my links',
-							 'Enter "message" to text me',
-							// 'Enter "show" to see the full image',
-							'Enter "pic" to see me',
+							 'Enter "message" to text me (only if absolutely necessay)',
+							 'Enter "pic" to see me',
 							 'Enter "resume" to view my resume',
 							 'Enter "emails" to list my emails',
 							 'Enter "chat" to chat with me',
@@ -106,10 +105,9 @@ app.controller("MainController", ['$scope', function($scope, $firebaseObject, $h
 
 		else{
 			if($scope.ismessage == "yes"){
-					$scope.message = $scope.todo;
 					$scope.Recipient.text = $scope.todo;
 					$scope.ismessage = "no";
-					$scope.mylist = ["message recorded"];
+					$scope.mylist = ["message sent to Preksha"];
 					$scope.sendSMSText($scope.Recipient);
 				
 
