@@ -1,16 +1,15 @@
 
 .container{
 	color: floralwhite;
-	
-	background-image: url("");
 	width: 666px%;
-	font-family: Courier;
 	margin-top: 180px;
 
 }
 .inputtext{
 	background-color: black;
 	color: floralwhite;
+	font-family: fantasy;
+	letter-spacing: 2px;
 }
 
  
@@ -25,12 +24,23 @@ body {
 	margin-top: 100px;
 	margin-left: 600px;
 }
-.text{
+.text, .todo{
 	font-size: 17px;
+	font-family: fantasy;
+	letter-spacing: 2px;
 }
 .ok{
 	color:white;
-	margin-left: 350px;
+	margin-left: 500px;
 	margin-top: 50px;
-	font-family: Courier;
+	font-family:fantasy;
+	
+	
 }
+
+
+
+
+
+
+

@@ -34,6 +34,7 @@ app.controller("MainController", ['$scope', function($scope, $firebaseObject, $h
 							 'Enter "resume" to view my resume',
 							 'Enter "emails" to list my emails',
 							 'Enter "chat" to chat with me',
+							 'Enter "whycat?" to know why that cat is there',
 							 'Enter "inspiration" to know a secret'];
 		}
 
@@ -68,9 +69,7 @@ app.controller("MainController", ['$scope', function($scope, $firebaseObject, $h
 		else if ($scope.todo == "song"){
 
 		}
-		// else if($scope.todo == "show"){
-		// 	$scope.mylist=['.', '.', '.', ' .', '. ', '.', '.', '.', ' .', '.', '.', '.', '. ', ' .', '.', '.', ' .', '.', '.', '.', '. ', ' .', '.', '.', ' .', '.', '.', '.', '. ', ' .', '.'];
-		//}
+
 		else if($scope.todo == "emails"){
 			$scope.mylist = ['prekshakoirala@gmail.com', 'preksha.koirala@bison.howard.edu'];
 		}
@@ -98,13 +97,23 @@ app.controller("MainController", ['$scope', function($scope, $firebaseObject, $h
 			$scope.image="resume.png";
 		}
 
+		else if($scope.todo == "whycat?"){
+			$scope.mylist="";
+			$scope.image="penguin.jpeg";
+		}
+
+		else if($scope.todo == "Preksha" || $scope.todo == "preksha"){
+			$scope.mylist=['Yes?'];
+
+		}
+
 		else if($scope.todo == "pic"){
 			$scope.mylist="";
 			$scope.image="preksha.jpg"
 		}
 
 		else{
-			if($scope.ismessage == "yes"){
+			if($scope.ismessage == "yes" && $scope.mylist==["Type your MESSAGE in here"]){
 					$scope.Recipient.text = $scope.todo;
 					$scope.ismessage = "no";
 					$scope.mylist = ["message sent to Preksha"];
