@@ -10,16 +10,18 @@
     <script src = "app.js"></script>
     <script src = "controller.js"></script>
     <script src = "directive.js"></script>
-
-
+   
 
   </head>
   <h1 class="ok"> P r e k s h a ~~ K o i r a l a</h1>
   <body ng-app="app" ng-controller="MainController">
-    
   
     <div class="header">
+
+     
       <div class="container">
+      <img ng-src="{{image}}" />
+
         
 
         <h2>{{todo}}</h2>
@@ -42,8 +44,9 @@
       </div>
 
       <div class = "next" ng-controller = "nextController">
-       
+
          </div>
+      
 
     </div>
     <div class="full" ng-view ></div>
